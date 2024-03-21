@@ -1,0 +1,62 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Noto Sans Caucasian Albanian", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h1{
+    
+    background-color: rgb(85, 232, 234); color: white; text-align: center; height: 1.5em; font-size: 64px; padding: 2%
+}
+h2{
+    background-color: rgb(85, 232, 234); color: white; text-align: center; height: 1.5em; font-size: 30px; padding: 2%
+}
+h3{
+    color: rgb(1, 94, 102); text-align: left; font-size: 14px; padding: 1%;
+}
+h4{
+    background-color: rgb(85, 232, 234); color: white; text-align: center; height: 1.5em; font-size: 14px; padding: 2%
+}
+footer{
+    margin-bottom: 0px;
+}
+.show_mapa{
+    
+    background-color: aquamarine; 
+    width: 340px;
+    height: 340px;
+    margin-right: 0px ;
+}
+iframe{
+    width: 340px; height: 340px;
+}
+.image-box {
+    border: 1px solid #ccc; /* Estilo del borde */
+    padding: 20px; /* Espacio interno alrededor de la imagen y el título */
+    width: 300px; /* Ancho del cuadro */
+}
+
+.image-box img {
+    max-width: 100%; /* Asegura que la imagen no se desborde del contenedor */
+    height: auto; /* Permite que la imagen conserve su proporción original */
+}
+
+.image-box h2 {
+    margin-top: 10px; /* Espacio entre la imagen y el título */
+    font-size: 18px; /* Tamaño del título */
+    color: #333; /* Color del texto del título */
+    background-color: rgb(85, 232, 234); color: white; text-align: left; height: 2em; font-size: 1em; padding: 9px;
+}
+
+a{
+    text-decoration: none; color: rgb(1, 94, 102); background-color: rgb(97, 244, 249); padding: 5px; border-radius: 5px;
+    ;
+}
+#pissis1{
+    height: 30em; width: 30em;
+    border: 2px solid black;
+}

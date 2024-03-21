@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/2b57125e93.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Noto+Sans+Caucasian+Albanian&family=Noto+Sans+Khojki&display=swap"
+        rel="stylesheet">
+    <title>Contacto</title>
+</head>
+
+<body>
+    <header>
+        <h1>Contacto</h1>
+        <nav>
+            <a href="index.html">Inicio</a>
+            <a href="/para_llegar.html">Para llegar</a>
+            <a href="/excursiones.html">Excursiones</a>
+            <a href="/donde_comer.html">Dónde comer</a>
+            <a href="/donde_dormir.html">Donde dormir</a>
+            <a href="/contacto.html">Contacto</a>
+        </nav>
+
+    </header>
+    <main>
+        <h2>Para mas información llene el formulario</h2>
+        <form action="" method="get">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <label>
+                    Nombre:
+                    <input type="text" placeholder="Escriba aqui su nombre" name="Nombre">
+                </label>
+                <label for="ApellidoInput">Apellido:</label> <input type="text" placeholder="Escriba aqui su apellido"
+                    id="ApellidoInput" name="apellido">
+                <label for="Edad">Edad:
+                    <input type="number" name="edad" value="20">
+                </label>
+                <label for="FechaNacimiento">Fecha de nacimiento:
+                    <input type="date" name="nacimiento">
+                </label>
+                <label for="email">email
+                    <input type="email" name="email">
+                </label>
+                <label for="contraseña"> Contraseña:
+                    <input type="password" name="password">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Excursiones elegidas</legend>
+                <label for="BalconPissis">Balcon del Pissis
+                    <input type="checkbox" name="excursionElegida" value="Pissis">
+                </label>
+                <label for="DunaMagica">Duna Mágica
+                    <input type="checkbox" name="excursionElegida" value="Duna">
+                </label>
+            </fieldset>
+            <fieldset>
+                <legend>Acciones</legend>
+                <input type="submit">
+                <input type="reset">
+            </fieldset>
+        </form>
+        <ul>
+            <li></li>
+        </ul>
+    </main>
+    <footer>
+        <h4>Derechos reservados @2024</h4>
+    </footer>
+</body>
+
+</html>
