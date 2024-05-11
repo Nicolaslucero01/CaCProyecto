@@ -1,0 +1,86 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Catamarca - Tu portal de viaje para descubrir y disfrutar.</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="" />
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div id="mainMenu">
+        <a href="index.html"><img src="./img/main-logo.png" height="70px" alt="Catamarca" /></a>
+        <div id="desktopMenu">
+          <a href="index.html" class="boton1">Home</a>
+          <a href="./sobre-catamarca.html" class="boton1">Sobre Catamarca</a>
+          <a href="informacion.html/#donde-comer" class="boton1">Donde Comer</a>
+          <a href="informacion.html/#donde-dormir" class="boton1">Donde Dormir</a>
+          <a href="informacion.html/#excursiones" class="boton1">Excursiones</a>
+          <a href="#contacto" class="boton1">Contacto</a>
+        </div>
+        <button id="toggleMenu">&#9776;</button>
+      </div>
+
+      <div class="mobile-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html">Sobre Catamarca</a>
+        <a href="informacion.html/#donde-comer">Donde Comer</a>
+        <a href="informacion.html/#donde-dormir">Donde Dormir</a>
+        <a href="informacion.html/#excursiones">Excursiones</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <body>
+    <main>
+      <h2 id="informacion">Información</h2>
+      <div id="app">
+        <div v-if="error">Se produjo un error, intente nuevamente</div>
+      
+
+      <div v-else>
+        
+      
+        <div id="tarjeta-hotel" v-for="hotel in datos">
+          <p>Nombre:{{hotel.hotel_name}}</p>
+          <p>Pais:{{hotel.country}}</p>
+          <p>Ciudad:{{hotel.city}}</p>
+          <p>Descripción:{{hotel.overview}}</p>
+          <p>Puntuación:{{hotel.rating_average}}</p>
+          <img :src="hotel.photo1" :alt="hotel.hotel_name">
+          <img :src="hotel.photo3" :alt="hotel.hotel_name">
+          <img :src="hotel.photo4" :alt="hotel.hotel_name">
+        </div> 
+      
+      </div>
+
+    </main>
+    <footer>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        document
+          .getElementById("toggleMenu")
+          .addEventListener("click", function () {
+            var mobileNav = document.querySelector(".mobile-nav");
+            if (mobileNav.classList.contains("open")) {
+              mobileNav.classList.remove("open");
+            } else {
+              mobileNav.classList.add("open");
+            }
+          });
+      });
+    </script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="./js/main.js"></script>
+  </body>
+
+</html>
