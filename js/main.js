@@ -1,18 +1,27 @@
 /* GALERIA */
 document.addEventListener("DOMContentLoaded", function () {
-  const galleryImages= new Array (1, 5, 10, 15, 20)
-  for (let i = 0; i < galleryImages.length; i++) {
-    document.querySelector(".gallery-images").innerHTML = `
+var galleryImages= new Array ( "01-galeria-home.jpg", "02-galeria-home.jpg", "03-galeria-home.jpg", "04-galeria-home.jpg", "05-galeria-home.jpg","06-galeria-home.jpg")
+var photo = `
+<div class="gallery-card">
+  <img
+    src="./img/${galleryImages[0]}"
+    alt="Catamarca"
+    class="gallery-img"
+  />
+</div>
+`;
+for (let i = 1; i < galleryImages.length; i++) {
+    var photo = photo + `
     <div class="gallery-card">
       <img
-        src="./img/01-galeria-home.jpg"
+        src="./img/${galleryImages[i]}"
         alt="Catamarca"
         class="gallery-img"
       />
     </div>
-    
-    `
+    `;
   }
+  document.querySelector(".gallery-images").innerHTML = photo
 });
 
 /* MODAL Para mostrar la imagen completa al hacer clic */ 
