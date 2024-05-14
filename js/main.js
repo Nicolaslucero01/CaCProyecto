@@ -232,7 +232,7 @@ createApp({
 createApp({
   data() {
     return {
-      url: "https://raw.githubusercontent.com/juliorodriguez87/Julio/main/restaurante.json", //hay que modificar esta URL porque la toma desde mi main de github
+      url: "https://raw.githubusercontent.com/Nicolaslucero01/CaCProyecto/Julio/js/restaurante.json", //hay que modificar esta URL porque la toma desde mi branch de github
       datosRestoran: [],
       error: false,
     }
@@ -262,7 +262,7 @@ createApp({
 createApp({
   data() {
     return {
-      url: "https://raw.githubusercontent.com/juliorodriguez87/Julio/main/excursiones.json", //hay que modificar esta URL porque la toma desde mi main de github
+      url: "https://raw.githubusercontent.com/Nicolaslucero01/CaCProyecto/Julio/js/excursiones.json", //hay que modificar esta URL porque la toma desde mi branch de github
       datosExcursiones: [],
       error: false,
     }
