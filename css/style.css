@@ -43,6 +43,8 @@ header {
     vertical-align: middle;
 }
 
+
+
 .boton1:hover {
     background-color: #D63027; 
 }
@@ -56,6 +58,39 @@ header {
     padding: 10px;
     margin-right: 10px;
     display: none; 
+}
+
+/* Desplegable y sus botones */
+
+.boton2 {
+    text-decoration: none;
+    text-align: center;
+    color: aliceblue;
+    margin: 5px 10px; 
+    background-color: #E8403B;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    
+}
+
+.boton2:hover {
+    background-color: #D63027; 
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    background-color: #fff; /* Color de fondo */
+    padding: 10px;
+    border: 1px solid #ccc; /* Borde */
+    z-index: 1; /* Asegura que el menú esté sobre otros elementos */
+    
+}
+
+
+#botonDesplegable:hover .submenu {
+    display: block;
 }
 
 
@@ -450,6 +485,28 @@ form {
     border-radius: 10px;
 }
 
+/* MAPA*/
+#mapa {
+    display: flex; /* Utilizamos flexbox para alinear los elementos horizontalmente */
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+
+#mapaGoogle {
+    max-width: 80%; /* Limitamos el ancho máximo del mapa para que no ocupe demasiado espacio */
+    margin-right: 5px; /* Agregamos un margen a la derecha del mapa para separarlo de la imagen */
+    
+}
+
+#mapaImagen {
+    
+    margin-left: 5px;
+    max-width: 25%; /* Limitamos el ancho máximo de la imagen para que no ocupe demasiado espacio */
+}
+
+
 /* FOOTER*/
 footer {
     background-color: #8D021F;
@@ -541,16 +598,53 @@ footer {
 }
 
 /*////////////////////// INFORMACION ////////////////////// */
+
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font: arial;
+    gap: 10px; /* Espacio entre tarjetas */
+    overflow: hidden;
+}
+
+
+
+#tarjeta-hotel {
+    width: calc(20% - 20px); /* Ancho de cada tarjeta (33.33% del ancho del contenedor menos el espacio entre tarjetas) */
+    padding: 20px;
+    background-color: #E8403B;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+#tarjeta-hotel h3 {
+
+    width: 100%;
+    height: 4%; /* El título ocupará el 10% del alto de la tarjeta */
+    margin: 0;
+    line-height: 1;
+
+}
+
+#tarjeta-hotel:hover {
+    background-color:#D63027
+}
+
+.descripcion-scroll {
+    max-height: 200px; 
+    overflow-y: auto; 
+}
+
 #informacion {
     font-size: 36px;
     text-align: center;
 }
-#max-widht{
-    max-width: 1200px; 
-    
-}
+
 #app{
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto; 
     padding: 50px; 
     background-color: #fff; 
@@ -560,12 +654,16 @@ footer {
     flex-wrap: wrap;
     justify-content: space-around ;
 }
-#tarjeta-hotel{
-    width: 300px;
-    border: 1px solid black;
-    margin-top: 10px;
-    border-radius: 10px;
+
+#imagen-hotel{
+    width: 350px; /* Establece un ancho fijo para todas las imágenes */
+    height: 200px; /* Establece una altura fija para todas las imágenes */
+    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo su relación de aspecto */
+    overflow: hidden;
 }
+
+
+
 #app img{
     width: 100%;
 
@@ -665,6 +763,7 @@ footer {
         margin: 5px 10px;
         display: block; 
     }
+
     #toggleMenu {
         display: block;
     }

@@ -1,0 +1,65 @@
+[
+    {
+        "nombre": "La Cabaña",
+        "direccion": "Calle Ficticia 123, Ciudad Ficticia",
+        "descripcion": "Disfruta de auténtica cocina casera en un ambiente acogedor.",
+        "puntaje": 8.5,
+        "imagen": "https://media.admagazine.com/photos/651aeed9da5f4d9a3844a94b/4:3/w_2660,h_1995,c_limit/Porten%CC%83o-restaurante-1.jpg"
+    },
+    {
+        "nombre": "El Sabor de México",
+        "direccion": "Avenida Imaginaria 456, Ciudad Ficticia",
+        "descripcion": "Explora una amplia variedad de platos mexicanos auténticos y sabrosos.",
+        "puntaje": 9.2,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/1/1d/Restaurant_in_The_Mus%C3%A9e_d%27Orsay.jpg"
+    },
+    {
+        "nombre": "Pizza Paradise",
+        "direccion": "Plaza del Sol, Local 10, Ciudad Ficticia",
+        "descripcion": "Prueba nuestras deliciosas pizzas artesanales con ingredientes frescos y de calidad.",
+        "puntaje": 8.9,
+        "imagen": "https://www.upmenu.com/wp-content/uploads/2022/08/Restaurante.jpg"
+    },
+    {
+        "nombre": "Sushi Dreams",
+        "direccion": "Calle del Mar 789, Ciudad Ficticia",
+        "descripcion": "Sumérgete en el mundo del sushi con nuestras creativas combinaciones de sabores.",
+        "puntaje": 9.5,
+        "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/17/cb/c6/90/udvalg-af-sushi.jpg"
+    },
+    {
+        "nombre": "La Parrilla Argentina",
+        "direccion": "Paseo de los Gauchos 234, Ciudad Ficticia",
+        "descripcion": "Disfruta de jugosas carnes a la parrilla en nuestro restaurante con estilo argentino.",
+        "puntaje": 8.7,
+        "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/1c/1b/7b/13/area-interna.jpg"
+    },
+    {
+        "nombre": "Café Bohemio",
+        "direccion": "Esquina de las Artes 567, Ciudad Ficticia",
+        "descripcion": "Relájate y disfruta de una taza de café recién preparado en nuestro acogedor café.",
+        "puntaje": 9.0,
+        "imagen": "https://media.diariouno.com.ar/p/46a74fc41c048109937a7a5fb47f48be/adjuntos/298/imagenes/009/291/0009291285/1200x0/smart/asado3jpg.jpg"
+    },
+    {
+        "nombre": "Thai Delights",
+        "direccion": "Calle del Siam 890, Ciudad Ficticia",
+        "descripcion": "Experimenta los auténticos sabores de Tailandia con nuestra cocina tradicional tailandesa.",
+        "puntaje": 9.3,
+        "imagen": "https://www.cucinare.tv/wp-content/uploads/2019/07/Restaurant-De-La-Cascada.jpg"
+    },
+    {
+        "nombre": "Mediterranean Breeze",
+        "direccion": "Paseo del Mar 345, Ciudad Ficticia",
+        "descripcion": "Viaja a las costas del Mediterráneo con nuestra fresca y saludable cocina mediterránea.",
+        "puntaje": 8.8,
+        "imagen": "https://hips.hearstapps.com/hmg-prod/images/elle-restaurantes-decoracion-bonita-instagram-raimunda-madrid-1573068471.jpg?crop=0.9333333333333333xw:1xh;center,top&resize=1200:*"
+    },
+    {
+        "nombre": "Burger Joint",
+        "direccion": "Calle de las Hamburguesas 678, Ciudad Ficticia",
+        "descripcion": "Saborea nuestras jugosas hamburguesas gourmet hechas con los mejores ingredientes.",
+        "puntaje": 9.1,
+        "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Restaurant_N%C3%A4sinneula.jpg/640px-Restaurant_N%C3%A4sinneula.jpg"
+    }
+]

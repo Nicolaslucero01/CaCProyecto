@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <header>
+  <!-- <header>
     <nav>
       <div id="mainMenu">
         <a href="index.html"><img src="./img/main-logo.png" height="70px" alt="Catamarca" /></a>
@@ -37,30 +37,67 @@
         <a href="#contacto">Contacto</a>
       </div>
     </nav>
-  </header>
+  </header> -->
 
   <body>
     <main>
       <h2 id="informacion">Información</h2>
+      <h3 style= "text-align: center; margin-left: 10%; margin-right: 10%;">En esta sección encontrarás toda la información que necesitas para aprovechar al máximo tu estadía. Desde los mejores lugares para comer hasta las emocionantes excursiones que puedes disfrutar, estamos aquí para guiarte en tu aventura.</h3>
       <div id="app">
         <div v-if="error">Se produjo un error, intente nuevamente</div>
       
 
       <div v-else>
-        
-      
-        <div id="tarjeta-hotel" v-for="hotel in datos">
-          <p>Nombre:{{hotel.hotel_name}}</p>
-          <p>Pais:{{hotel.country}}</p>
-          <p>Ciudad:{{hotel.city}}</p>
-          <p>Descripción:{{hotel.overview}}</p>
-          <p>Puntuación:{{hotel.rating_average}}</p>
-          <img :src="hotel.photo1" :alt="hotel.hotel_name">
-          <img :src="hotel.photo3" :alt="hotel.hotel_name">
-          <img :src="hotel.photo4" :alt="hotel.hotel_name">
-        </div> 
-      
+        <h2 style="text-align: center;" id="donde-dormir">Los mejores hoteles de Catamarca</h2>
+        <br>
+        <div class="contenedor-tarjetas">
+          <div id="tarjeta-hotel" v-for="hotel in datos">
+            <h3 style="text-align: center; font-size: 24px; flex: 1;">{{hotel.hotel_name}}</h3> 
+            <br>
+            <br>
+            <p><b>País:</b> {{hotel.country}}</p>
+            <p><b>Ciudad:</b> {{hotel.city}}</p>
+            <p><b>Descripción:</b></p>
+            <div class="descripcion-scroll">
+              <p style="margin-left: 20px; margin-right: 5px;">{{hotel.overview}}</p>  
+
+            </div>
+            <br>
+            <p><b>Puntuación:</b> {{hotel.rating_average}}</p>
+            
+            <div class="carrusel" id="imagen-hotel">
+              <img :src="hotel.photo1" :alt="hotel.hotel_name">
+              <img :src="hotel.photo3" :alt="hotel.hotel_name">
+              <img :src="hotel.photo4" :alt="hotel.hotel_name">
+            </div>
+          </div> 
+        </div>
       </div>
+      
+
+      <div id="restaurantes">
+        <div v-if="error">Se produjo un error, intente nuevamente</div>
+      
+        <div v-else>
+          <h2 style="text-align: center;" id="donde-comer">Los mejores restaurantes de Catamarca</h2>
+          <div class="contenedor-tarjetas">
+            <div id="tarjeta-restoran" v-for="restoran in datos">
+              <h3 style="text-align: center; font-size: 24px; flex: 1;">{{restoran.nombre}}</h3>
+              <p><b>Dirección:</b> {{restoran.direccion}}</p>
+              <p><b>Descripción:</b></p>
+              <div class="descripcion-scroll">
+                <p style="margin-left: 20px; margin-right: 5px;">{{restoran.descripcion}}</p>
+              </div>
+              <p><b>Puntuación:</b> {{restoran.puntaje}}</p>
+              
+              <div class="carrusel" id="imagen-restoran">
+                <img v-for="imagen in restoran.imagenes" :src="imagen" :alt="restoran.nombre">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
 
     </main>
     <footer>
