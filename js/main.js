@@ -125,11 +125,11 @@ document.addEventListener("DOMContentLoaded", function() {
             <!-- Columna 3: Menú -->
             <div class="menu-footer">
                 <a href="index.html">Home</a>
-                <a href="index.html">Sobre Catamarca</a>
-                <a href="informacion.html/#donde-comer">Donde Comer</a>
-                <a href="informacion.html/#donde-dormir">Donde Dormir</a>
-                <a href="informacion.html/#excursiones">Excursiones</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="sobre-catamarca.html">Sobre Catamarca</a>
+                <a href="informacion.html#restaurantes">Donde Comer</a>
+                <a href="informacion.html#app">Donde Dormir</a>
+                <a href="informacion.html#excursiones">Excursiones</a>
+                <a href="index.html#contacto">Contacto</a>
             </div>
             
             <!-- Columna 4: Redes Sociales -->
