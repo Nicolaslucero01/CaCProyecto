@@ -50,9 +50,9 @@ document.addEventListener("DOMContentLoaded", function() {
                       <a href="./sobre-catamarca.html" class="boton1">Sobre Catamarca</a>
                       <div href="./informacion.html" class="boton1" id="botonDesplegable">Informacion
                         <div id="menuDesplegable" class="submenu">
-                          <a href="./informacion.html" class="boton2">Donde Comer</a> 
-                          <a href="./informacion.html#donde-dormir" class="boton2">Donde Dormir</a>
-                          <a href="./informacion.html/#excursiones" class="boton2">Excursiones</a>
+                          <a href="./informacion.html#restaurantes" class="boton2">Donde Comer</a> 
+                          <a href="./informacion.html#app" class="boton2">Donde Dormir</a>
+                          <a href="./informacion.html#excursiones" class="boton2">Excursiones</a>
                         </div>
                       </div>
                       <a href="./index.html#contacto" class="boton1">Contacto</a>
@@ -63,9 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
               <div class="mobile-nav">
                   <a href="index.html">Home</a>
                   <a href="./sobre-catamarca.html">Sobre Catamarca</a>
-                  <a href="informacion.html/#donde-comer">Donde Comer</a>
-                  <a href="informacion.html/#donde-dormir">Donde Dormir</a>
-                  <a href="informacion.html/#excursiones">Excursiones</a>
+                  <a href="informacion.html#restaurantes">Donde Comer</a>
+                  <a href="informacion.html#app">Donde Dormir</a>
+                  <a href="informacion.html#excursiones">Excursiones</a>
                   <a href="#contacto">Contacto</a>
               </div>
           </nav>
@@ -190,12 +190,12 @@ function galeria(){
 
 /*GALERIA INFORMACION */
 const { createApp } = Vue;
+const { appRestoran } = Vue
 
 createApp({
   data() {
     return {
       url: "https://demo0522475.mockable.io/hoteles",
-      urlRestoran: "./js/info.json",
       datos: [],
       error: false,
     }
@@ -219,11 +219,12 @@ createApp({
   }
 }).mount('#app');
 
+// JSON de restaurantes
 createApp({
   data() {
     return {
-      url: "./js/info.json",
-      datos: [],
+      url: "https://raw.githubusercontent.com/juliorodriguez87/Julio/main/restaurante.json", //hay que modificar esta URL porque la toma desde mi main de github
+      datosRestoran: [],
       error: false,
     }
   },
@@ -232,8 +233,9 @@ createApp({
       fetch(url)
         .then(response => response.json())
         .then(data => {
-          console.log(data.restoran);
-          this.datos = data.restoran;
+          console.log(data.restoranes); // Verifica la estructura de los datos recibidos
+          this.datosRestoran = data.restoranes; // Asigna los datos a this.datos
+          console.log(this.datosRestoran)
         })
         .catch(error => {
           console.log("Error:", error);
@@ -243,8 +245,39 @@ createApp({
   },
   created() {
     this.fetchRestaurantData(this.url);
+    
   }
 }).mount('#restaurantes');
+
+//JSON de excursiones
+createApp({
+  data() {
+    return {
+      url: "https://raw.githubusercontent.com/juliorodriguez87/Julio/main/excursiones.json", //hay que modificar esta URL porque la toma desde mi main de github
+      datosExcursiones: [],
+      error: false,
+    }
+  },
+  methods: {
+    fetchExcursionesData(url) {
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          console.log(data.excursiones); // Verifica la estructura de los datos recibidos
+          this.datosExcursiones = data.excursiones; // Asigna los datos a this.datos
+          console.log(this.datosRestoran)
+        })
+        .catch(error => {
+          console.log("Error:", error);
+          this.error = true;
+        });
+    }
+  },
+  created() {
+    this.fetchExcursionesData(this.url);
+    
+  }
+}).mount('#excursiones');
 
 
 

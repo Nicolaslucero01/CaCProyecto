@@ -609,9 +609,8 @@ footer {
 }
 
 
-
 #tarjeta-hotel {
-    width: calc(20% - 20px); /* Ancho de cada tarjeta (33.33% del ancho del contenedor menos el espacio entre tarjetas) */
+    width: calc(30% - 20px); /* Ancho de cada tarjeta (33.33% del ancho del contenedor menos el espacio entre tarjetas) */
     padding: 20px;
     background-color: #E8403B;
     color: #fff;
@@ -656,9 +655,12 @@ footer {
 }
 
 #imagen-hotel{
-    width: 350px; /* Establece un ancho fijo para todas las imágenes */
-    height: 200px; /* Establece una altura fija para todas las imágenes */
+    max-width: 600px; /* Ancho máximo */
+    max-height: 250px; /* Altura máxima */
+    width: auto; /* Ancho automático para mantener la relación de aspecto */
+    height: auto; /* Altura automática para mantener la relación de aspecto */
     object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo su relación de aspecto */
+    border-radius: 5px; /* Opcional: si deseas bordes redondeados en las imágenes */
     overflow: hidden;
 }
 
@@ -670,6 +672,88 @@ footer {
 }
 .cuerpo{
     margin: 10px;
+}
+
+/* TARJETAS RESTAURANTE (Tamaño de imagenes las modifiqué en el html) */
+
+#restaurantes{
+    
+    background-color: #E8403B;
+    margin: 0 auto; 
+    padding: 50px; 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around ;
+}
+
+#tarjeta-restoran {
+    
+    width: calc(30% - 20px); /* Ancho de cada tarjeta (33.33% del ancho del contenedor menos el espacio entre tarjetas) */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+#tarjeta-restoran:hover {
+    background-color:#c8c8c8
+}
+
+#imagen-restoran{
+    text-align: center;
+    max-width: 600px; /* Ancho máximo */
+    max-height: 250px; /* Altura máxima */
+    width: auto; /* Ancho automático para mantener la relación de aspecto */
+    height: auto; /* Altura automática para mantener la relación de aspecto */
+    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo su relación de aspecto */
+    border-radius: 5px; /* Opcional: si deseas bordes redondeados en las imágenes */
+    overflow: hidden;
+}
+
+
+/* TARJETAS EXCURSIONES (Tamaño de imagenes las modifiqué en el html) */
+
+#excursiones{
+    
+    margin: 0 auto; 
+    padding: 50px; 
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around ;
+}
+
+#tarjeta-excursiones {
+    
+    width: calc(30% - 20px); /* Ancho de cada tarjeta (30% del ancho del contenedor menos el espacio entre tarjetas) */
+    padding: 20px;
+    background-color: #E8403B;
+    color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    display: flex;
+    flex-direction: column;
+}
+
+#tarjeta-excursiones > * {
+    flex: 1; /* Todos los elementos dentro de la tarjeta ocuparán el mismo espacio */
+}
+
+#tarjeta-excursiones:hover {
+    background-color:#D63027;
+}
+
+#imagen-excursion{
+    max-width: 100%; /* Ancho máximo igual al ancho de su contenedor */
+    height: auto; /* Altura automática para mantener la relación de aspecto */
+    border-radius: 5px; /* Opcional: si deseas bordes redondeados en las imágenes */
+    object-fit: cover; /* Escala la imagen para cubrir todo el contenedor manteniendo su relación de aspecto */
+    overflow: hidden;
 }
 
 

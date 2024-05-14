@@ -1,0 +1,75 @@
+{
+    "restoranes":[
+    {
+        "nombre": "La Cabaña",
+        "direccion": "Calle Ficticia 123, Ciudad Ficticia",
+        "descripcion": "Disfruta de auténtica cocina casera en un ambiente acogedor. Una experiencia imperdible",
+        "telefono": "+54 291 48-7000",
+        "puntaje": 8.5,
+        "imagen": "https://lacabana.com.ar/wp-content/uploads/2020/06/la_cabana_29_r-1392x630.jpg"
+    },
+    {
+        "nombre": "El Sabor de México",
+        "direccion": "Avenida Imaginaria 456, Ciudad Ficticia",
+        "descripcion": "Explora una amplia variedad de platos mexicanos auténticos y sabrosos.",
+        "telefono": "+54 231 38-7060",
+        "puntaje": 9.2,
+        "imagen": "https://i.pinimg.com/originals/76/a4/20/76a4207e602e99dd89d4cf50a6980910.jpg"
+    },
+    {
+        "nombre": "Pizza Paradise",
+        "direccion": "Plaza del Sol, Local 10, Ciudad Ficticia",
+        "descripcion": "Prueba nuestras deliciosas pizzas artesanales con ingredientes frescos y de calidad.",
+        "telefono": "+54 2932 48-3050",
+        "puntaje": 8.9,
+        "imagen": "https://turismo.buenosaires.gob.ar/sites/turismo/files/field/image/pizzeria-guerrin-jovenes-1500x610.jpg"
+    },
+    {
+        "nombre": "Sushi Dreams",
+        "direccion": "Calle del Mar 789, Ciudad Ficticia",
+        "descripcion": "Sumérgete en el mundo del sushi con nuestras creativas combinaciones de sabores.",
+        "telefono":"+54 221 42-9900" ,
+        "puntaje": 9.5,
+        "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/17/d7/e5/86/p-20190608-161556-largejpg.jpg"
+    },
+    {
+        "nombre": "La Parrilla Argentina",
+        "direccion": "Paseo de los Gauchos 234, Ciudad Ficticia",
+        "descripcion": "Disfruta de jugosas carnes a la parrilla en nuestro restaurante con estilo argentino.",
+        "telefono": "+54 3492 42-4000",
+        "puntaje": 8.7,
+        "imagen": "https://www.cucinare.tv/wp-content/uploads/2019/02/19-02-08-Parrilla-1.jpg"
+    },
+    {
+        "nombre": "Café Bohemio",
+        "direccion": "Esquina de las Artes 567, Ciudad Ficticia",
+        "descripcion": "Relájate y disfruta de una taza de café recién preparado en nuestro acogedor café.",
+        "telefono": "+54 383 42-1111",
+        "puntaje": 9.0,
+        "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/1c/12/29/a8/vive-l-ete.jpg"
+    },
+    {
+        "nombre": "Thai Delights",
+        "direccion": "Calle del Siam 890, Ciudad Ficticia",
+        "descripcion": "Experimenta los auténticos sabores de Tailandia con nuestra cocina tradicional tailandesa.",
+        "telefono": "+54 280 42-2222",
+        "puntaje": 9.3,
+        "imagen": "https://mir-s3-cdn-cf.behance.net/project_modules/max_3840/8d1c2822043577.56331a50c96e1.jpg"
+    },
+    {
+        "nombre": "Mediterranean Breeze",
+        "direccion": "Paseo del Mar 345, Ciudad Ficticia",
+        "descripcion": "Viaja a las costas del Mediterráneo con nuestra fresca y saludable cocina mediterránea.",
+        "telefono": "+54 294 42-3333",
+        "puntaje": 8.8,
+        "imagen": "https://media-cdn.tripadvisor.com/media/photo-s/24/57/54/0a/night-ambient.jpg"
+    },
+    {
+        "nombre": "Burger Joint",
+        "direccion": "Calle de las Hamburguesas 678, Ciudad Ficticia",
+        "descripcion": "Saborea nuestras jugosas hamburguesas gourmet hechas con los mejores ingredientes.",
+        "telefono": "+54 297 42-4444",
+        "puntaje": 9.1,
+        "imagen": "https://e00-marca.uecdn.es/assets/multimedia/imagenes/2019/02/26/15511968658125.jpg"
+    }
+]}
