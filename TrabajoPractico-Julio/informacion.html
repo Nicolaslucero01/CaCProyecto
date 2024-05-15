@@ -1,0 +1,139 @@
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Catamarca - Tu portal de viaje para descubrir y disfrutar.</title>
+  <meta name="description" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="" />
+  <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+</head>
+
+<body>
+  <main>
+    <div id="background-img" style="background-image: url(./img/fondo-1.webp)">
+      <h2 id="informacion">Información</h2>
+      <h3 style="text-align: center; margin-left: 10%; margin-right: 10%;">En esta sección encontrarás toda la
+        información que necesitas para aprovechar al máximo tu estadía. Desde los mejores lugares para comer hasta las
+        emocionantes excursiones que puedes disfrutar, estamos aquí para guiarte en tu aventura.</h3>
+        <br>
+        <br>
+    </div>
+
+    <section id="app">
+      <div v-if="error">Se produjo un error, intente nuevamente</div>
+
+
+      <div v-else>
+        <h2 style="text-align: center;" id="donde-dormir">Los mejores hoteles de Catamarca</h2>
+        <br>
+        <div class="contenedor-tarjetas">
+          <div id="tarjeta-hotel" v-for="hotel in datos">
+            <h3 style="text-align: center; font-size: 24px; flex: 1;">{{hotel.hotel_name}}</h3>
+            <br>
+            <br>
+            <p><b>País:</b> {{hotel.country}}</p>
+            <p><b>Ciudad:</b> {{hotel.city}}</p>
+            <p><b>Descripción:</b></p>
+            <div class="descripcion-scroll">
+              <p style="margin-left: 20px; margin-right: 5px;">{{hotel.overview}}</p>
+
+            </div>
+            <br>
+            <p><b>Puntuación:</b> {{hotel.rating_average}}</p>
+
+            <div class="carrusel" id="imagen-hotel">
+              <img width="600px" height="250px" :src="hotel.photo1" :alt="hotel.hotel_name">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="restaurantes">
+      <div v-if="error">Se produjo un error, intente nuevamente</div>
+    
+      <div v-else>
+        <h2 style="text-align: center; color: aliceblue;" id="donde-comer">Los mejores restaurantes de Catamarca</h2>
+        <br>
+        <br>
+        <div class="contenedor-tarjetas">
+          <div id="tarjeta-restoran" v-for="restoran in datosRestoran">
+            <h3 style="text-align: center; font-size: 24px; flex: 1;">{{restoran.nombre}}</h3>
+            <br>
+            <br>
+            <p><b>Dirección:</b> {{restoran.direccion}}</p>
+            <p><b>Descripción:</b></p>
+            <div class="descripcion-scroll">
+              <p style="margin-left: 20px; margin-right: 5px;">{{restoran.descripcion}}</p>
+            </div>
+            <p><b>Teléfono:</b> {{restoran.telefono}}</p>
+            <p><b>Puntuación:</b> {{restoran.puntaje}}</p>
+    
+            <div class="carrusel" id="imagen-restoran">
+              <img width="600px" height="250px" :src="restoran.imagen" :alt="restoran.nombre">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="excursiones">
+      <div v-if="error">Se produjo un error, intente nuevamente</div>
+    
+      <div v-else>
+        <h2 style="text-align: center;" id="donde-comer">Excursiones Catamarca</h2>
+        <br>
+        <br>
+        <div class="contenedor-tarjetas">
+          <div id="tarjeta-excursiones" v-for="excursion in datosExcursiones">
+            <h3 style="text-align: center; font-size: 24px; flex: 15%;">{{excursion.nombre}}</h3>
+            <div class="grupo-info" style="flex: 50%">
+              <div class="info">
+                <p><b>Dirección:</b> {{excursion.direccion}}</p>
+                <p><b>Teléfono:</b> {{excursion.telefono}}</p>
+              </div>
+              <div class="info">
+                <p><b>Actividad:</b></p>
+                <div class="descripcion-scroll">
+                  <p style="margin-left: 20px; margin-right: 5px;">{{excursion.actividad}}</p>
+                </div>
+                <p><b>Puntuación:</b> {{excursion.puntuacion}}</p>
+              </div>
+            </div>
+            <div class="carrusel" id="imagen-excursion" style="flex: 35%">
+              <img width="600px" height="250px" :src="excursion.imagen" :alt="excursion.nombre">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+  </main>
+  <footer>
+  </footer>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      document
+        .getElementById("toggleMenu")
+        .addEventListener("click", function () {
+          var mobileNav = document.querySelector(".mobile-nav");
+          if (mobileNav.classList.contains("open")) {
+            mobileNav.classList.remove("open");
+          } else {
+            mobileNav.classList.add("open");
+          }
+        });
+    });
+  </script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
