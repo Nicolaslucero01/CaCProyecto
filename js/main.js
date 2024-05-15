@@ -1,6 +1,5 @@
 /* GALERIA */
 document.addEventListener("DOMContentLoaded", function () {
-<<<<<<< HEAD
   var galleryImages= new Array ( "01-galeria-home.webp", "02-galeria-home.webp", "03-galeria-home.webp", "04-galeria-home.webp", "05-galeria-home.webp","06-galeria-home.webp")
   var photo = `
   <div class="gallery-card">
@@ -24,31 +23,6 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     document.querySelector(".gallery-images").innerHTML = photo
   });
-=======
-var galleryImages= new Array ( "01-galeria-home.jpg", "02-galeria-home.jpg", "03-galeria-home.jpg", "04-galeria-home.jpg", "05-galeria-home.jpg","06-galeria-home.jpg")
-var photo = `
-<div class="gallery-card">
-  <img
-    src="./img/${galleryImages[0]}"
-    alt="Catamarca"
-    class="gallery-img"
-  />
-</div>
-`;
-for (let i = 1; i < galleryImages.length; i++) {
-    var photo = photo + `
-    <div class="gallery-card">
-      <img
-        src="./img/${galleryImages[i]}"
-        alt="Catamarca"
-        class="gallery-img"
-      />
-    </div>
-    `;
-  }
-  document.querySelector(".gallery-images").innerHTML = photo
-});
->>>>>>> 6cd1a53c742ec141735c98d93beab24a24a60b77
 
 /* MODAL Para mostrar la imagen completa al hacer clic */ 
 document.addEventListener("DOMContentLoaded", function () {
