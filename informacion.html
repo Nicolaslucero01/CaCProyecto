@@ -88,7 +88,7 @@
               <br />
               <p><b>Dirección:</b> {{restoran.direccion}}</p>
               <p><b>Descripción:</b></p>
-              <div class="descripcion-scroll">
+              <div class="descripcion-comer">
                 <p style="margin-left: 20px; margin-right: 5px">
                   {{restoran.descripcion}}
                 </p>
@@ -151,22 +151,12 @@
         </div>
       </section>
     </main>
+    <button id="backToTopBtn">▲</button>
+
     <footer></footer>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document
-          .getElementById("toggleMenu")
-          .addEventListener("click", function () {
-            var mobileNav = document.querySelector(".mobile-nav");
-            if (mobileNav.classList.contains("open")) {
-              mobileNav.classList.remove("open");
-            } else {
-              mobileNav.classList.add("open");
-            }
-          });
-      });
-    </script>
+
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <script src="./js/main.js"></script>
+    <script src="./js/volver.js"></script>
   </body>
 </html>
