@@ -592,6 +592,10 @@ footer {
   color: #e8403b;
 }
 
+.img-logo {
+  height: 50px;
+}
+
 /*////////////////////// INFORMACION ////////////////////// */
 
 .contenedor-tarjetas {
