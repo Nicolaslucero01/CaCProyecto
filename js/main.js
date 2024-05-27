@@ -59,7 +59,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <nav>
                 <div id="mainMenu">
                     <a href="index.html">
-                        <img src="./img/main-logo.png" height="70px" alt="Catamarca" />
+                        <img src="./img/main-logo.webp" height="70px" alt="Catamarca" class="img-logo"/>
                     </a>
                     <div id="desktopMenu">
                         <a href="index.html" class="boton1">Home</a>
@@ -92,6 +92,17 @@ document.addEventListener("DOMContentLoaded", function () {
   document.body.insertAdjacentHTML("afterbegin", headerHTML);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  document.getElementById("toggleMenu").addEventListener("click", function () {
+    var mobileNav = document.querySelector(".mobile-nav");
+    if (mobileNav.classList.contains("open")) {
+      mobileNav.classList.remove("open");
+    } else {
+      mobileNav.classList.add("open");
+    }
+  });
+});
+
 //Menú desplegable
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -114,24 +125,24 @@ document.addEventListener("DOMContentLoaded", function () {
             
             <!-- Columna 1: Logo -->
             <div class="logo">
-                <img src="./img/logo-footer.png" height="100px" alt="Catamarca" />
+                <img src="./img/logo-footer.webp" height="100px" alt="Catamarca" />
             </div>
             
             <!-- Columna 2: Contacto -->
               <div class="contacto">
                   <h3>Contacto</h3>
                   <a href="https://maps.app.goo.gl/VK8rctNQAdSoULp68" target="_blank">
-                      <img src="./img/ubicacion.png" alt="Ubicación" />
+                      <img src="./img/ubicacion.webp" alt="Ubicación" />
                       Ubicación
                   </a>
                   <br>
                   <a href="tel:+541133332222">
-                      <img src="./img/telefono.png" alt="Teléfono" />
+                      <img src="./img/telefono.webp" alt="Teléfono" />
                       +54 11 3333 2222
                   </a>
                   <br>
                   <a href="mailto:catamarca@turismo.com.ar">
-                      <img src="./img/email.png" alt="Correo electrónico" />
+                      <img src="./img/email.webp" alt="Correo electrónico" />
                       catamarca@turismo.com.ar
                   </a>
               </div>

@@ -163,7 +163,7 @@
       >
         <div id="contacto">
           <h2>Contactanos</h2>
-          <form id="myForm" action="showdata.html" method="GET">
+          <form id="myForm" action="show_data.html">
             <div>
               <label for="nombre">Nombre:</label>
               <input type="text" name="nombre" id="nombre" />
@@ -244,20 +244,6 @@
     </main>
     <footer></footer>
 
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        document
-          .getElementById("toggleMenu")
-          .addEventListener("click", function () {
-            var mobileNav = document.querySelector(".mobile-nav");
-            if (mobileNav.classList.contains("open")) {
-              mobileNav.classList.remove("open");
-            } else {
-              mobileNav.classList.add("open");
-            }
-          });
-      });
-    </script>
     <script src="./js/validacion.js"></script>
     <script src="./js/volver.js"></script>
   </body>
