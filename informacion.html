@@ -39,30 +39,33 @@
             Los mejores hoteles de Catamarca
           </h2>
           <br />
-          <div class="contenedor-tarjetas">
-            <div id="tarjeta-hotel" v-for="hotel in datos">
-              <h3 style="text-align: center; font-size: 24px; flex: 1">
+          <div id="app" class="contenedor-tarjetas">
+            <div v-for="hotel in datos" :key="hotel.id" class="tarjeta-hotel">
+              <h3 style="text-align: center; font-size: 24px">
                 {{hotel.hotel_name}}
               </h3>
-              <br />
-              <br />
               <p><b>País:</b> {{hotel.country}}</p>
               <p><b>Ciudad:</b> {{hotel.city}}</p>
               <p><b>Descripción:</b></p>
-              <div class="descripcion-scroll">
-                <p style="margin-left: 20px; margin-right: 5px">
-                  {{hotel.overview}}
-                </p>
+              <div
+                class="descripcion-scroll"
+                :class="{ expandido: hotel.expandido }"
+              >
+                <p>{{ hotel.overview }}</p>
               </div>
-              <br />
-              <p><b>Puntuación:</b> {{hotel.rating_average}}</p>
-
+              <button
+                class="button-leer"
+                @click="hotel.expandido = !hotel.expandido"
+              >
+                {{ hotel.expandido ? 'Leer menos' : 'Leer más' }}
+              </button>
+              <p><b>Puntuación:</b> {{ hotel.rating_average }}</p>
               <div class="carrusel" id="imagen-hotel">
                 <img
-                  width="600px"
-                  height="250px"
                   :src="hotel.photo1"
                   :alt="hotel.hotel_name"
+                  width="3022"
+                  height="250"
                 />
               </div>
             </div>
