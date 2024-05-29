@@ -92,7 +92,9 @@ document.getElementById("myForm").addEventListener("submit", function (event) {
     document.getElementById("error-comentarios").textContent = "";
   }
 
-  if (!isValid) {
+  if (isValid) {
+    alert("Su mensaje fue enviado correctamente");
+  } else {
     event.preventDefault();
   }
 });
