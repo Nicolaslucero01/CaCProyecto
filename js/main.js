@@ -144,6 +144,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const loginPopup = document.getElementById("loginPopup");
   const closeButton = document.querySelector(".close");
   const loginForm = document.getElementById("login-form");
+  const adminBtn = document.getElementById("adminBtn"); // Botón CRUD para administradores
 
   let usuarios = [];
 
@@ -189,6 +190,7 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorage.removeItem("username"); // Remover el nombre de usuario de localStorage
     localStorage.removeItem("isAdmin"); // Remover el rol de administrador de localStorage
     updateLoginUI();
+    window.location.href = "./index.html";
   }
 
   // Evento click en el botón de login
@@ -211,7 +213,7 @@ document.addEventListener("DOMContentLoaded", function() {
       setLoggedInSession(user);
       hideLoginPopup();
       if (user.nivel === "admin") {
-        window.location.href = "https://visitacatamarcatpi.netlify.app/excursiones.html"; // Redirigir a la página del CRUD para admin
+        window.location.href = "https://visitacatamarcatpi.netlify.app/crud.html"; // Redirigir a la página del CRUD para admin
       } else {
         window.location.href = "./index.html"; // Redirigir a la página de excursiones
       }
@@ -227,10 +229,19 @@ document.addEventListener("DOMContentLoaded", function() {
       usernameDisplay.innerText = username; // Mostrar el nombre de usuario
       usernameDisplay.style.display = "inline"; // Mostrar el nombre de usuario
       logoutButton.style.display = "inline"; // Mostrar el botón de logout
+
+      // Mostrar u ocultar el botón CRUD según el estado de administrador
+      if (isAdmin) {
+        adminBtn.style.display = "inline"; // Mostrar el botón CRUD para administradores
+      } else {
+        adminBtn.style.display = "none"; // Ocultar el botón CRUD para no administradores
+      }
+
     } else {
       loginButton.style.display = "inline"; // Mostrar el botón de login
       usernameDisplay.style.display = "none"; // Ocultar el nombre de usuario
       logoutButton.style.display = "none"; // Ocultar el botón de logout
+      adminBtn.style.display = "none"; // Ocultar el botón CRUD
     }
   }
 
@@ -248,7 +259,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Evento click en el botón de logout
   logoutButton.addEventListener("click", function() {
-    logout();
+    logout(); // Llama a la función logout para cerrar sesión
   });
 
   // Verificar el estado de logueado al cargar la página
@@ -259,15 +270,17 @@ document.addEventListener("DOMContentLoaded", function() {
     isAdmin = localStorage.getItem("isAdmin") === "true";
     updateLoginUI();
 
-  // Si el usuario está logueado como admin al cargar la página, mostrar el botón Admin
+    // Si el usuario está logueado como admin al cargar la página, mostrar el botón CRUD
     if (isAdmin) {
-      document.getElementById("adminBtn").style.display = "inline";
-      document.getElementById("adminBtn").addEventListener("click", function() {
-        window.location.href = "https://visitacatamarcatpi.netlify.app/excursiones.html";
+      adminBtn.style.display = "inline";
+      adminBtn.addEventListener("click", function() {
+        window.location.href = "https://visitacatamarcatpi.netlify.app/crud.html";
       });
     }
   }
 });
+
+
 
 //Menú desplegable
 
