@@ -71,7 +71,22 @@ document.addEventListener("DOMContentLoaded", function () {
                             <a href="./informacion.html#excursiones" class="boton2">Excursiones</a>
                           </div>
                         </div>
+                        <div id="loginPopup" class="popup-overlay">
+                          <div class="popup-content">
+                            <span class="close">&times;</span>
+                            <form id="login-form">
+                              <label for="username">Usuario:</label>
+                              <input type="text" id="username" name="username" required>
+                              <label for="password">Contraseña:</label>
+                              <input type="password" id="password" name="password" required>
+                              <button type="submit">Iniciar Sesión</button>
+                            </form>
+                          </div>
+                        </div>
                         <a href="./index.html#contacto" class="boton1">Contacto</a>
+                        <button id="loginButton" class="boton-login">Login</button> <!-- Botón de login agregado -->
+                        <div id="usernameDisplay"></div>
+                        <button id="logoutButton" style="display: none;">Logout</button>
                     </div>
                     <button id="toggleMenu">&#9776;</button>
                 </div>
@@ -83,6 +98,21 @@ document.addEventListener("DOMContentLoaded", function () {
                     <a href="informacion.html#app">Donde Dormir</a>
                     <a href="informacion.html#excursiones">Excursiones</a>
                     <a href="#contacto">Contacto</a>
+                    <div id="loginPopup" class="popup-overlay">
+                      <div class="popup-content">
+                        <span class="close">&times;</span>
+                        <form id="login-form">
+                          <label for="username">Usuario:</label>
+                          <input type="text" id="username" name="username" required>
+                          <label for="password">Contraseña:</label>
+                          <input type="password" id="password" name="password" required>
+                          <button type="submit">Iniciar Sesión</button>
+                        </form>
+                      </div>
+                    </div>
+                    <button id="loginButton" class="boton-login">Login</button> <!-- Botón de login agregado para móvil -->
+                    <div id="usernameDisplay"></div>
+                    <button id="logoutButton" style="display: none;">Logout</button>
                 </div>
             </nav>
         </header>
@@ -101,6 +131,114 @@ document.addEventListener("DOMContentLoaded", function () {
       mobileNav.classList.add("open");
     }
   });
+});
+
+
+//Login
+document.addEventListener("DOMContentLoaded", function() {
+  const loginButton = document.getElementById("loginButton");
+  const usernameDisplay = document.getElementById("usernameDisplay");
+  const logoutButton = document.getElementById("logoutButton");
+  const loginPopup = document.getElementById("loginPopup");
+  const closeButton = document.querySelector(".close");
+  const loginForm = document.getElementById("login-form");
+  
+  let isLoggedIn = false;
+  let isAdmin = false;
+  let username = "";
+
+  // Función para mostrar el popup de login
+  function showLoginPopup() {
+    loginPopup.style.display = "block";
+  }
+
+  // Función para ocultar el popup de login
+  function hideLoginPopup() {
+    loginPopup.style.display = "none";
+  }
+
+  // Función para establecer la sesión como logueado
+  function setLoggedInSession() {
+    isLoggedIn = true;
+    isAdmin = true; // Supongamos que siempre que se loguea es como admin
+    username = "admin";
+    localStorage.setItem("isLoggedIn", "true"); // Usar localStorage para guardar el estado de login
+    localStorage.setItem("username", username); // Usar localStorage para guardar el nombre de usuario
+    updateLoginUI();
+  }
+
+  // Función para cerrar sesión
+  function logout() {
+    isLoggedIn = false;
+    isAdmin = false;
+    username = "";
+    localStorage.removeItem("isLoggedIn"); // Remover el estado de login de localStorage
+    localStorage.removeItem("username"); // Remover el nombre de usuario de localStorage
+    updateLoginUI();
+  }
+
+  // Evento click en el botón de login
+  loginButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    showLoginPopup();
+  });
+
+  // Evento submit del formulario de login
+  loginForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+    
+    const inputUsername = document.getElementById("username").value;
+    const inputPassword = document.getElementById("password").value;
+    
+    // Simulación de autenticación
+    if (inputUsername === "admin" && inputPassword === "admin") {
+      setLoggedInSession();
+      hideLoginPopup();
+      window.location.href = "https://visitacatamarcatpi.netlify.app/excursiones.html"; // Redirección después de login
+    } else {
+      alert("Credenciales incorrectas. Inténtelo de nuevo.");
+    }
+  });
+
+  // Función para actualizar la interfaz después de iniciar sesión
+  function updateLoginUI() {
+    if (isLoggedIn && isAdmin) {
+      loginButton.style.display = "none"; // Ocultar el botón de login
+      usernameDisplay.innerText = `${username}`; // Mostrar el nombre de usuario
+      usernameDisplay.style.display = "inline"; // Mostrar el nombre de usuario
+      logoutButton.style.display = "inline"; // Mostrar el botón de logout
+    } else {
+      loginButton.style.display = "inline"; // Mostrar el botón de login
+      usernameDisplay.style.display = "none"; // Ocultar el nombre de usuario
+      logoutButton.style.display = "none"; // Ocultar el botón de logout
+    }
+  }
+
+  // Evento click en el botón de cerrar el popup
+  closeButton.addEventListener("click", function() {
+    hideLoginPopup();
+  });
+
+  // Evento click fuera del popup para cerrarlo
+  window.addEventListener("click", function(event) {
+    if (event.target === loginPopup) {
+      hideLoginPopup();
+    }
+  });
+
+  // Evento click en el botón de logout
+  logoutButton.addEventListener("click", function() {
+    logout();
+  });
+
+  // Verificar el estado de logueado al cargar la página
+  const isLoggedInStorage = localStorage.getItem("isLoggedIn");
+  if (isLoggedInStorage === "true") {
+    isLoggedIn = true;
+    username = localStorage.getItem("username");
+    isAdmin = true; // Supongamos que siempre que se loguea es como admin
+    updateLoginUI();
+  }
 });
 
 //Menú desplegable
