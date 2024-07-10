@@ -84,6 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
                           </div>
                         </div>
                         <a href="./index.html#contacto" class="boton1">Contacto</a>
+                        <button id="adminBtn" style="display: none;">CRUD</button>
                         <button id="loginButton" class="boton-login">Login</button> <!-- Botón de login agregado -->
                         <div id="usernameDisplay"></div>
                         <button id="logoutButton" style="display: none;">Logout</button>
@@ -110,6 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </form>
                       </div>
                     </div>
+                    <button id="adminBtn" style="display: none;">CRUD</button>
                     <button id="loginButton" class="boton-login">Login</button> <!-- Botón de login agregado para móvil -->
                     <div id="usernameDisplay"></div>
                     <button id="logoutButton" style="display: none;">Logout</button>
@@ -142,7 +144,17 @@ document.addEventListener("DOMContentLoaded", function() {
   const loginPopup = document.getElementById("loginPopup");
   const closeButton = document.querySelector(".close");
   const loginForm = document.getElementById("login-form");
-  
+
+  let usuarios = [];
+
+  // Obtener los usuarios de la API
+  fetch('https://natsanabria.pythonanywhere.com/usuarios')
+    .then(response => response.json())
+    .then(data => {
+      usuarios = data;
+    })
+    .catch(error => console.error('Error al obtener usuarios:', error));
+
   let isLoggedIn = false;
   let isAdmin = false;
   let username = "";
@@ -158,12 +170,13 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // Función para establecer la sesión como logueado
-  function setLoggedInSession() {
+  function setLoggedInSession(user) {
     isLoggedIn = true;
-    isAdmin = true; // Supongamos que siempre que se loguea es como admin
-    username = "admin";
+    isAdmin = user.nivel === "admin";
+    username = user.nombre;
     localStorage.setItem("isLoggedIn", "true"); // Usar localStorage para guardar el estado de login
     localStorage.setItem("username", username); // Usar localStorage para guardar el nombre de usuario
+    localStorage.setItem("isAdmin", isAdmin); // Guardar el rol de administrador
     updateLoginUI();
   }
 
@@ -174,6 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
     username = "";
     localStorage.removeItem("isLoggedIn"); // Remover el estado de login de localStorage
     localStorage.removeItem("username"); // Remover el nombre de usuario de localStorage
+    localStorage.removeItem("isAdmin"); // Remover el rol de administrador de localStorage
     updateLoginUI();
   }
 
@@ -186,15 +200,21 @@ document.addEventListener("DOMContentLoaded", function() {
   // Evento submit del formulario de login
   loginForm.addEventListener("submit", function(event) {
     event.preventDefault();
-    
+
     const inputUsername = document.getElementById("username").value;
     const inputPassword = document.getElementById("password").value;
-    
-    // Simulación de autenticación
-    if (inputUsername === "admin" && inputPassword === "admin") {
-      setLoggedInSession();
+
+    // Validar credenciales contra la lista de usuarios obtenida de la API
+    const user = usuarios.find(user => user.nombre === inputUsername && user.clave === inputPassword);
+
+    if (user) {
+      setLoggedInSession(user);
       hideLoginPopup();
-      window.location.href = "https://visitacatamarcatpi.netlify.app/excursiones.html"; // Redirección después de login
+      if (user.nivel === "admin") {
+        window.location.href = "https://visitacatamarcatpi.netlify.app/excursiones.html"; // Redirigir a la página del CRUD para admin
+      } else {
+        window.location.href = "./index.html"; // Redirigir a la página de excursiones
+      }
     } else {
       alert("Credenciales incorrectas. Inténtelo de nuevo.");
     }
@@ -202,9 +222,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // Función para actualizar la interfaz después de iniciar sesión
   function updateLoginUI() {
-    if (isLoggedIn && isAdmin) {
+    if (isLoggedIn) {
       loginButton.style.display = "none"; // Ocultar el botón de login
-      usernameDisplay.innerText = `${username}`; // Mostrar el nombre de usuario
+      usernameDisplay.innerText = username; // Mostrar el nombre de usuario
       usernameDisplay.style.display = "inline"; // Mostrar el nombre de usuario
       logoutButton.style.display = "inline"; // Mostrar el botón de logout
     } else {
@@ -236,8 +256,16 @@ document.addEventListener("DOMContentLoaded", function() {
   if (isLoggedInStorage === "true") {
     isLoggedIn = true;
     username = localStorage.getItem("username");
-    isAdmin = true; // Supongamos que siempre que se loguea es como admin
+    isAdmin = localStorage.getItem("isAdmin") === "true";
     updateLoginUI();
+
+  // Si el usuario está logueado como admin al cargar la página, mostrar el botón Admin
+    if (isAdmin) {
+      document.getElementById("adminBtn").style.display = "inline";
+      document.getElementById("adminBtn").addEventListener("click", function() {
+        window.location.href = "https://visitacatamarcatpi.netlify.app/excursiones.html";
+      });
+    }
   }
 });
 
